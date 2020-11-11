@@ -57,7 +57,18 @@
     </video>
     <img style="z-index: 1;" class="fullscreenImg" style="width: 100%; height: 100%;" src="./diona.png" alt="Oops, image is missing...">
     <script>
-        let am = 30;
+        let am = 10;
+        // Read changes made by users
+        window.wallpaperPropertyListener = {
+            applyUserProperties: function(properties) {
+                if (properties.slider) {
+                    if (properties.slider.value !== "") {
+                        // Do something with the slider value
+                        am = properties.slider.value
+                    }
+                }
+            }
+        }
 
         document.addEventListener("mousemove", (e) => {
         let xx = e.pageX;
@@ -85,25 +96,25 @@
 
         let animation = circle.animate(
             [
-            {
-                transform: `translate3d(${x - tuSam}px, ${y - tuSam}px, 0)`,
-                opacity: 1,
-                filter: `hue-rotate(${0}deg`
-            },
-            {
-                transform: `translate3d(${destinationX - size}px, ${
-                destinationY - size
-                }px, 0) rotateZ(${roate}deg)  translateX(${tuSam}px)`,
-                opacity: 0.5,
-                filter: `hue-rotate(${360}deg`
-            },
-            {
-                transform: `translate3d(${destinationX}px, ${destinationY}px, 0) rotateZ(${roate}deg)  translateX(${
-                tuSam * 30
-                }px)`,
-                opacity: 0,
-                filter: `hue-rotate(${720}deg`
-            }
+                {
+                    transform: `translate3d(${x - tuSam}px, ${y - tuSam}px, 0)`,
+                    opacity: 1,
+                    filter: `hue-rotate(${0}deg`
+                },
+                {
+                    transform: `translate3d(${destinationX - size}px, ${
+                    destinationY - size
+                    }px, 0) rotateZ(${roate}deg)  translateX(${tuSam}px)`,
+                    opacity: 0.5,
+                    filter: `hue-rotate(${360}deg`
+                },
+                {
+                    transform: `translate3d(${destinationX}px, ${destinationY}px, 0) rotateZ(${roate}deg)  translateX(${
+                    tuSam * 30
+                    }px)`,
+                    opacity: 0,
+                    filter: `hue-rotate(${720}deg`
+                }
             ],
             {
             duration: 10 + Math.random() * 4000,
