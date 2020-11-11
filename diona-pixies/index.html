@@ -40,11 +40,13 @@
 
         .fullscreenImg {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
             right: 0;
             bottom: 0;
+            transform: translate(-50%, -50%);
             object-fit: cover;
+            object-position: center;
         }
     </style>
     <title>Diona Pixies</title>
@@ -52,8 +54,6 @@
 <body>
     <video style="z-index: 2;" class="fullscreenImg" autoplay loop>
         <source src="./diona.webm" type="video/webm" />
-        Video is missing. Please wait for it to be fixed or contact Gemu#9126 on Discord.
-        <!-- https://imgur.com/a/hzHOTyJ -->
     </video>
     <img style="z-index: 1;" class="fullscreenImg" style="width: 100%; height: 100%;" src="./diona.png" alt="Oops, image is missing...">
     <script>
