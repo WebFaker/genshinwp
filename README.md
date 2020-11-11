@@ -1,4 +1,4 @@
-# genshinwp
+# Genshin Impact Wallpapers by Webfaker
 
 ## About the content
 
